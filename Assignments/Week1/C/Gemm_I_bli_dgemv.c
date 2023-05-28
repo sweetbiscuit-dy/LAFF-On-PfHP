@@ -11,6 +11,6 @@ void MyGemm( int m, int n, int k, double *A, int ldA,
   
   for ( int i=0; i<m; i++ )
     bli_dgemv( BLIS_TRANSPOSE, BLIS_NO_CONJUGATE,
-	       k, n, &d_one, B, 1, ldB, &alpha(  ,    ), ldA, &d_one, &gamma(   ,   ), ldC );
+	       k, n, &d_one, B, 1, ldB, &alpha(i,0), ldA, &d_one, &gamma(i, 0), ldC );
 }
   
